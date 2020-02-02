@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MMBB1.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> Madrona Meadows Bed and Barn</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+
+        </asp:ScriptManager>
+
+        <div class="container" role="main">
+            <div class="body-content">
+                    <a href="Default.aspx">
+                        <img src="images/MADlogo.gif" class="img-fluid"/>
+                        <img src="images/MElogo.gif" class="img-fluid"/>
+                        <img src="images/BBlogo.gif" class="img-fluid"/>
+                    </a>
+            </div>
+
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="Default.aspx">HOME<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="GuestHouse.aspx">GUESTHOUSE</a>
+                    <a class="nav-item nav-link" href="Grounds.aspx">GROUNDS</a>
+                    <a class="nav-item nav-link" href="Links.aspx">LINKS</a>
+                    <a class="nav-item nav-link" href="AboutUs.aspx">ABOUT US</a>
+                    <a class="nav-item nav-link" href="ContactUs.aspx">CONTACT US</a>
+                </div>
+                </div>
+            </nav>
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <hr />
+
+            <footer>
+                <div class="row text-center">
+                    <div class="col-sm-12 col-md-4">
+                        <img src="images/reservations-box.gif" class="img-fluid"/>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <a href="guesthouse.aspx#rates" title="Click here to see our guesthouse rates"><img src="images/rates-box_o.gif" class="img-fluid"/></a>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                        <a href="http://www.flickr.com/photos/23837354@N04/sets/72157633934338612/" target="_blank" ><img class="img-fluid" src="images/slideshow-box_o.gif" /></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <p>&copy; <%: DateTime.Now.Year %> - Madrona Meadows Bed &amp; Barn</p>
+                </div>
+            </footer>
+                    
+        </div>
+
+    </form>
+</body>
+</html>
